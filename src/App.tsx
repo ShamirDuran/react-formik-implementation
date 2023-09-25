@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FormInput } from './components/FormInput'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        console.log('saved')
+    }
+
+    return (
+        <div className="main-container">
+            <div className="container centered flex-column shadow-container">
+                <h1 style={{ alignSelf: 'center' }}>Formik</h1>
+
+                <form
+                    style={{ marginTop: '1rem', gap: 12 }}
+                    className="flex-column"
+                    onChange={handleFormSubmit}
+                >
+                    <FormInput id="username" placeholder="Username*" required />
+                    <FormInput id="fullname" placeholder="Fullname" />
+                    <FormInput
+                        id="email"
+                        placeholder="Email*"
+                        type="email"
+                        required
+                    />
+                    <FormInput
+                        id="password"
+                        type="password"
+                        placeholder="Password*"
+                        required
+                    />
+                    <FormInput
+                        id="repassword"
+                        type="password"
+                        placeholder="Confirm password*"
+                        required
+                    />
+
+                    <button className="submit-button" style={{ marginTop: '2rem' }}>
+                        Registrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App

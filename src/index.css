@@ -1,13 +1,59 @@
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+  background-color: lightgreen;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered {
+  margin: 0px auto;
+}
+
+.form-input {
+  padding: 8px 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+}
+
+.submit-button {
+  padding: 8px 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: coral;
+  color: #fff;
+  font-weight: 500;
+}
+
+.shadow-container {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
