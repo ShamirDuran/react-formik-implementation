@@ -1,5 +1,5 @@
 interface Props {
-    id: string
+    name: string
     placeholder?: string
     type?: React.HTMLInputTypeAttribute
     value?: string
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const FormInput = ({
-    id,
+    name,
     placeholder = '',
     type = 'text',
     value = '',
@@ -15,7 +15,7 @@ export const FormInput = ({
 }: Props) => {
     return (
         <input
-            id={id}
+            name={name}
             type={type}
             placeholder={placeholder}
             required={required}

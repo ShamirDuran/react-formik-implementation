@@ -15,23 +15,24 @@ const App = () => {
                     style={{ marginTop: '1rem', gap: 12 }}
                     className="flex-column"
                     onChange={handleFormSubmit}
+                    noValidate
                 >
-                    <FormInput id="username" placeholder="Username*" required />
-                    <FormInput id="fullname" placeholder="Fullname" />
+                    <FormInput name="username" placeholder="Username*" required />
+                    <FormInput name="fullname" placeholder="Fullname" />
                     <FormInput
-                        id="email"
+                        name="email"
                         placeholder="Email*"
                         type="email"
                         required
                     />
                     <FormInput
-                        id="password"
+                        name="password"
                         type="password"
                         placeholder="Password*"
                         required
                     />
                     <FormInput
-                        id="repassword"
+                        name="repassword"
                         type="password"
                         placeholder="Confirm password*"
                         required
