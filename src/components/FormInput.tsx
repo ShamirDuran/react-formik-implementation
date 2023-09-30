@@ -1,25 +1,30 @@
+import { ErrorMessage, useField } from 'formik'
+
 interface Props {
     name: string
-    placeholder?: string
     type?: React.HTMLInputTypeAttribute
-    value?: string
     required?: boolean
+    [x: string]: any
 }
 
-export const FormInput = ({
-    name,
-    placeholder = '',
-    type = 'text',
-    value = '',
-    required = false,
-}: Props) => {
+export const FormInput = ({ required = false, ...props }: Props) => {
+    const [field] = useField(props)
+
     return (
-        <input
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            required={required}
-            className="form-input"
-        />
+        <div className="flex-column">
+            <input
+                className="form-input"
+                autoComplete="off"
+                aria-autocomplete="none"
+                required={required}
+                {...field}
+                {...props}
+            />
+            <ErrorMessage
+                name={props.name}
+                component="small"
+                className="error-text"
+            />
+        </div>
     )
 }
